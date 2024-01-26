@@ -1,2 +1,18 @@
-var request = new XMLHttprequest();
-request.open("get,https:\\restcountries.com/")
+var request = new XMLHttpRequest();
+request.open("Get","https://restcountries.com/v3.1/all")
+request.send();
+request.onload = function(){
+    var res = JSON.parse(request.response);
+    console.log(res);
+}
+for(var i=0;i<res.lenth;i++){
+if(res[i].capital){
+console.log(res[i].capital[0]+" "+res[i].area)
+}
+else{
+
+
+console.log("invalid capital"+res[i].area);
+}
+
+}
